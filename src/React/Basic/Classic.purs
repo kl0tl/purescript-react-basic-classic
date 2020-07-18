@@ -270,6 +270,8 @@ foreign import displayNameFromSelf ::
 -- | caution.
 foreign import data ReactComponentInstance :: Type -> Type -> Type
 
+type role ReactComponentInstance representational representational
+
 -- | Convert a React-Basic `ComponentSpec` to a JavaScript-friendly React component.
 -- | This function should only be used for JS interop and not normal React-Basic usage.
 -- |
