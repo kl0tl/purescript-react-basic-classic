@@ -128,6 +128,8 @@ foreign import createComponent ::
 -- |   itself from JavaScript. For JavaScript interop, see `toReactComponent`.__
 data Component props
 
+type role Component representational
+
 -- | `Self` represents the component instance at a particular point in time.
 -- |
 -- | - `props`
