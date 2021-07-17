@@ -2,7 +2,7 @@
 
 var React = require("react");
 
-exports.createComponent = (function () {
+export var createComponent = (function () {
   // Begin component prototype functions
   // (`this`-dependent, defined outside `createComponent`
   // for a slight performance boost)
@@ -97,20 +97,20 @@ exports.createComponent = (function () {
   };
 })();
 
-exports.readProps = function (self) {
+export var readProps = function (self) {
   return function () {
     return self.instance_.props.$$props;
   };
 };
 
-exports.readState = function (self) {
+export var readState = function (self) {
   return function () {
     var state = self.instance_.state;
     return state === null ? null : state.$$state;
   };
 };
 
-exports.runUpdate_ = function (update, self, action) {
+export var runUpdate_ = function (update, self, action) {
   var sideEffects = null;
   self.instance_.setState(
     function (s) {
@@ -134,7 +134,7 @@ exports.runUpdate_ = function (update, self, action) {
   );
 };
 
-exports.make = function (_unionDict) {
+export var make = function (_unionDict) {
   return function ($$type) {
     return function ($$spec) {
       var $$specPadded = {
@@ -156,15 +156,15 @@ exports.make = function (_unionDict) {
   };
 };
 
-exports.displayNameFromComponent = function ($$type) {
+export var displayNameFromComponent = function ($$type) {
   return $$type.displayName || "[unknown]";
 };
 
-exports.displayNameFromSelf = function (self) {
-  return exports.displayNameFromComponent(self.instance_.constructor);
+export var displayNameFromSelf = function (self) {
+  return displayNameFromComponent(self.instance_.constructor);
 };
 
-exports.toReactComponent = function (_unionDict) {
+export var toReactComponent = function (_unionDict) {
   return function (fromJSProps) {
     return function ($$type) {
       return function ($$spec) {
