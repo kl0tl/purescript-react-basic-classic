@@ -1,6 +1,6 @@
 "use strict";
 
-var React = require("react");
+import React from "react";
 
 export var createComponent = (function () {
   // Begin component prototype functions
